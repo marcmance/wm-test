@@ -1,0 +1,196 @@
+#project {
+	img {
+		&.plus-minus {
+			width: 20px;
+			height: 20px;
+		}
+
+		&.avatar {
+			width: 40px;
+			height: 40px;
+		}
+
+		&.closeImg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	.header {
+		border-bottom: 2px solid orange;
+		padding: 0 0 1em 0;
+		margin: 0 0 1em 0;
+
+		.title {
+			float: left;
+		}
+		.close {
+			float: right;
+		}
+
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+
+	.project-con {
+		border-bottom: 2px solid grey;
+		padding: 0 0 1em 0;
+		margin: 0 0 1em 0;
+
+
+		.detail-header {
+
+			div:first-child {
+				float: left;
+			}
+
+			.dates {
+				float: right;
+			}
+
+			&:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+		}
+
+		.details {
+			margin: 1em 1.5em 0;
+		}
+
+		.owner-container {
+			margin: 1em 1.5em 0;
+
+			.owner {
+				margin: 0 0 1em 0;
+			}
+		}
+	}
+
+	.progress-bar {
+		float: left;
+		margin: 0 1em 0 0;
+	}
+}
+
+#all-projects {
+
+	.header {
+
+		button {
+			border-radius: .25em;
+			border: 1px solid @borderColor;
+			font-style: italic;
+			background-color: #FFFFFF;
+
+			&.activeFilter {
+				background-color: #4FADE0;
+				color: #FFFFFF;
+			}
+		}
+
+		.title {
+			float: left;
+			width: 18%;
+		}
+
+		.buttons {
+			float: left;
+			width: 72%;
+			margin: auto;
+			text-align: center;
+		}
+
+		.new-project {
+			float: right;
+			width: 10%;
+		}
+
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+	}
+
+	table {
+
+		margin: 2em 0 0 0;
+		width: 100%;
+
+		&:before {
+			content: '';
+			display: table-caption;
+			padding: 1px 0;
+			line-height: 1px;
+			border-top: 2px solid orange;
+		}
+
+		tr:first-child {
+
+			td {
+				color: #FFFFFF;
+				background-color: grey;
+				padding: 1em;
+				margin-top: 1em;
+			}
+
+		}
+
+		td {
+			margin: 1em;
+			padding: 1em;
+			width: 20%;
+			height: 50px;
+
+			&.name {
+				width: 30%;
+			}
+
+			&.owner {
+				width: 15%;
+			}
+
+			&.due {
+				width: 15%;
+			}
+
+
+			&.progress-cell {
+
+				width: 30%;
+
+				.step {
+					float: left;
+					margin: 0 1px;
+					width: 20px;
+				}
+
+				.progress-bar {
+					float: left;
+					margin: 0 10px 0 0;
+				}
+			}
+
+			&.active {
+				width: 10%;
+			}
+		}
+	}
+
+	.circle {
+		border: 1px solid grey;
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+
+		&.active {
+			background-color: green;
+		}
+	}
+}

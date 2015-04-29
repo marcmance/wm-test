@@ -1,0 +1,47 @@
+<div id="all-projects">
+
+	<div class="header">
+		<div class="title">
+			Projects Index
+		</div>
+
+		<div class="buttons">
+			<button ng-class="{activeFilter: resources.filterType == 'all'}" ng-click="clearFilter()">View All</button>
+			<button ng-class="{activeFilter: resources.filterType == 'active'}" ng-click="filterActive(true)">Active</button>
+			<button ng-class="{activeFilter: resources.filterType == 'inactive'}" ng-click="filterActive(false)">Inactive</button>
+		</div>
+
+		<div class="new-project">
+			<button ng-click="">New Project</button>
+		</div>
+	</div>
+
+
+	<div class="projects-views">
+		<table>
+			<tr>
+				<td ng-click="sortBy('name')"> Project Name</td>
+				<td ng-click="sortBy('owner.name')"> Owner: </td>
+				<td ng-click="sortBy('end_date')"> Due Date: </td>
+				<td ng-click="sortBy('current_step')"> Steps: </td>
+				<td ng-click="sortBy('active')"> Active: </td>
+
+			</tr>
+			<tr ng-repeat="p in resources.projects|orderBy:resources.column:resources.descending | filter:resources.filters" >
+				<td class="name"><a href="#/project/{{p.id}}">{{p.name}}</a></td>
+				<td class="owner">{{p.owner.name}}</td>
+				<td class="due">{{p.end_date * 1000 |date:'mediumDate'}}</td>
+				<td class="progress-cell"> 
+					<div class="step">{{p.current_step}}</div>
+					<div class="progress-bar">
+						<div class="status" style="width: {{(p.current_step / p.total_steps) * 100}}%">
+							
+						</div>
+					</div>
+					<div class="step">{{p.total_steps}}</div>
+				</td>
+				<td class="active"><div class="circle" ng-class="{active: p.active}"/></td>
+			</tr>
+		</table>
+	</div>
+</div>

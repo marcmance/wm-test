@@ -1,0 +1,62 @@
+@import "reset.css";
+@import "/modules/project/css/project.less";
+
+/*base colors*/
+@containerBgColor: #FFFFFF;
+@backgroundColor: #EEEDF0;
+@borderColor: #93999E;
+@linkColor: #7694AD;
+
+html {
+	font-family: Helvetica;
+}
+
+body {
+	background-color: @backgroundColor; 
+}
+
+i {
+	font-style:italic;
+}
+
+a {
+	color: @linkColor;
+	text-decoration: none;
+}
+
+b {
+	font-weight: bold;
+}
+
+.main-container {
+	width:80%;
+	max-width: 980px;
+	margin: 3em auto;
+	padding: 1em;
+	background-color: @containerBgColor; 
+	border: 1px solid @borderColor;
+	border-radius: .5em;
+	font-size: 1em;
+}
+
+.title {
+	font-size: 1.5em;
+}
+
+.sub-title {
+	font-size: 1.2em;
+}
+
+
+.progress-bar {
+	width: 110px;
+	height: 10px;
+	background-color: @backgroundColor;
+
+	.status {
+		background-color: green;
+		height: 100%;
+	}
+}
+
+

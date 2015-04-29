@@ -1,0 +1,52 @@
+<div id="project">
+
+	<div class="header">
+		<div class="title">
+			{{resources.project.name}}
+		</div>
+
+		<div class="close">
+			<a href="/"><img src="/imgs/x.svg" class="closeImg"/></a>
+		</div>
+	</div>
+
+	<div class="project-con">
+		<div class="detail-header">
+			<div>
+				<img src="/imgs/plus.svg" class="plus-minus" ng-show="!resources.showDetails" ng-click="showDetails()"> 
+				<img src="/imgs/minus.svg" class="plus-minus" ng-show="resources.showDetails" ng-click="showDetails()">
+				<span class="sub-title">Project Details</span>
+			</div>
+			<div class="dates">
+				{{resources.project.start_date * 1000 |date:'shortDate'}} to {{resources.project.end_date * 1000 |date:'shortDate'}}
+			</div>
+		</div>
+		<div class="details" ng-show="resources.showDetails">
+			{{resources.project.description}}
+		</div>
+	</div>
+
+	<div class="project-con">
+		<div>
+			<img src="/imgs/plus.svg" class="plus-minus" ng-show="!resources.showOwner" ng-click="showOwner()"> 
+			<img src="/imgs/minus.svg" class="plus-minus" ng-show="resources.showOwner" ng-click="showOwner()">
+			<span class="sub-title">Project Owner </span>
+		</div>
+		<div class="owner-container" ng-show="resources.showOwner">
+			<div class="owner">
+				<img src="/imgs/avatar.svg" class="avatar"> 
+				{{resources.project.owner.name}}
+			</div>
+
+			<div>
+				<div class="progress-bar">
+					<div class="status" style="width: {{(resources.project.current_step / sresources.project.total_steps) * 100}}%">
+						
+					</div>
+				</div>
+
+				{{resources.project.current_step}} / {{resources.project.total_steps}}
+			</div>
+		</div>
+	</div>
+</div>
